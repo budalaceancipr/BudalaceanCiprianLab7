@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
+
 
 namespace BudalaceanCiprianLab7.Models
 {
@@ -16,6 +18,9 @@ namespace BudalaceanCiprianLab7.Models
 
         public  string Description { get; set; } = string.Empty;
         public DateTime Date { get; set; }
+
+        [ForeignKey(typeof(Shop))]
+        public int ShopID { get; set; }
 
     }
 }

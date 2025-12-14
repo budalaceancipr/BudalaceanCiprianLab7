@@ -22,6 +22,8 @@ namespace BudalaceanCiprianLab7.Data
             _database.CreateTableAsync<ShopList>().Wait();
             _database.CreateTableAsync<Product>().Wait();
             _database.CreateTableAsync<ListProduct>().Wait();
+            _database.CreateTableAsync<Shop>().Wait();
+
         }
 
 
@@ -82,5 +84,22 @@ namespace BudalaceanCiprianLab7.Data
                 "INNER JOIN ListProduct LP ON P.ID = LP.ProductID " +
                 "WHERE LP.ShopListID = ?", shoplistid);
         }
+
+        public Task<List<Shop>> GetShopsAsync()
+        {
+            return _database.Table<Shop>().ToListAsync();
+        }
+        public Task<int> SaveShopAsync(Shop shop)
+        {
+            if (shop.ID != 0)
+            {
+                return _database.UpdateAsync(shop);
+            }
+            else
+            {
+                return _database.InsertAsync(shop);
+            }
+        }
+
     }
 }
