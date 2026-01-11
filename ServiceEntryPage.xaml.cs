@@ -10,7 +10,6 @@ namespace BudalaceanCiprianLab7
         private AppDatabase _database;
         private Service _service;
 
-        // Constructor pentru creare sau editare
         public ServiceEntryPage(AppDatabase database, Service? service = null)
         {
             InitializeComponent();
@@ -20,7 +19,6 @@ namespace BudalaceanCiprianLab7
 
             if (service != null)
             {
-                // Populate fields
                 NameEntry.Text = _service.Name;
                 PriceEntry.Text = _service.Price.ToString();
             }

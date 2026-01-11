@@ -24,8 +24,7 @@ namespace BudalaceanCiprianLab7
 
         private async void OnAddServiceClicked(object sender, EventArgs e)
         {
-            // Pentru un serviciu nou, nu trimitem nimic
-            await Navigation.PushAsync(new ServiceEntryPage(_database)); // ⚠️ Trebuie să corectăm și ServiceEntryPage
+            await Navigation.PushAsync(new ServiceEntryPage(_database)); 
         }
 
         private async void OnServiceSelected(object sender, SelectionChangedEventArgs e)
@@ -35,10 +34,9 @@ namespace BudalaceanCiprianLab7
 
             if (e.CurrentSelection[0] is Service selectedService)
             {
-                await Navigation.PushAsync(new ServiceEntryPage(_database, selectedService)); // editare serviciu
+                await Navigation.PushAsync(new ServiceEntryPage(_database, selectedService)); 
             }
 
-            // Deselect item
             ((CollectionView)sender).SelectedItem = null;
         }
     }

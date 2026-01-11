@@ -2,7 +2,7 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0; // contor click-uri
+        int count = 0; 
 
         public MainPage()
         {
