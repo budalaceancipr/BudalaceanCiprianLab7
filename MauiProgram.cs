@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using BudalaceanCiprianLab7.Data;
 
 namespace BudalaceanCiprianLab7
 {
@@ -16,8 +17,10 @@ namespace BudalaceanCiprianLab7
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
+
+            builder.Services.AddSingleton<AppDatabase>();
 
             return builder.Build();
         }

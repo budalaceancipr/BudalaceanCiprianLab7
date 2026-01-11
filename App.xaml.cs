@@ -6,20 +6,23 @@ namespace BudalaceanCiprianLab7
 {
     public partial class App : Application
     {
-        static ShoppingListDatabase? database;
-        public static ShoppingListDatabase Database
+        static AppDatabase? database;
+
+        public static AppDatabase Database
         {
             get
             {
                 if (database == null)
                 {
-                    database = new
-                   ShoppingListDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.
-                   LocalApplicationData), "ShoppingList.db3"));
+                    string dbPath = Path.Combine(
+                        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                        "ClinicApp.db3");
+                    database = new AppDatabase(dbPath);
                 }
                 return database;
             }
         }
+
         public App()
         {
             InitializeComponent();

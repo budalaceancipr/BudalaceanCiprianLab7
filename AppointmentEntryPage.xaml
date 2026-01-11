@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudalaceanCiprianLab7.AppointmentEntryPage"
+             Title="Appointments">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Appointment" Clicked="OnAppointmentAddedClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="20">
+        <ListView x:Name="AppointmentListView" ItemSelected="OnAppointmentSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding AppointmentDate}" Detail="{Binding ClinicID}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

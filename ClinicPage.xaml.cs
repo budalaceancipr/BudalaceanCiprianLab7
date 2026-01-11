@@ -5,36 +5,36 @@ using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Devices.Sensors;
 using System.Linq;
 
-public partial class ShopPage : ContentPage
+public partial class ClinicPage : ContentPage
 {
-    public ShopPage()
+    public ClinicPage()
     {
         InitializeComponent();
     }
 
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
-        var shop = (Shop)BindingContext;
-        await App.Database.SaveShopAsync(shop);
+        var clinic = (Clinic)BindingContext;
+        await App.Database.SaveClinicAsync(clinic);
         await Navigation.PopAsync();
     }
 
     async void OnShowMapButtonClicked(object sender, EventArgs e)
     {
-        var shop = (Shop)BindingContext;
-        var address = shop.Address;
+        var clinic = (Clinic)BindingContext;
+        var address = clinic.Address;
 
         var locations = await Geocoding.GetLocationsAsync(address);
-        var shopLocation = locations?.FirstOrDefault();
+        var clinicLocation = locations?.FirstOrDefault();
 
-        if (shopLocation == null)
+        if (clinicLocation == null)
             return;
 
         var options = new MapLaunchOptions
         {
-            Name = "Magazinul meu preferat"
+            Name = "Clinica"
         };
 
-        await Map.OpenAsync(shopLocation, options);
+        await Map.OpenAsync(clinicLocation, options);
     }
 }

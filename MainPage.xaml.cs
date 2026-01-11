@@ -2,7 +2,7 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        int count = 0; // contor click-uri
 
         public MainPage()
         {
@@ -20,6 +20,15 @@
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
-    }
 
+        private async void OnAppointmentsClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AppointmentEntryPage());
+        }
+
+        private async void OnClinicsClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ClinicPage());
+        }
+    }
 }

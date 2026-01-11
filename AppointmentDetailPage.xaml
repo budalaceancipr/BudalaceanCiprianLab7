@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudalaceanCiprianLab7.AppointmentDetailPage"
+             Title="Appointment Detail">
+
+    <StackLayout Padding="20" Spacing="15">
+
+        <Label Text="Clinic ID:" />
+        <Entry x:Name="ClinicIdEntry" Keyboard="Numeric" />
+
+        <Label Text="User ID:" />
+        <Entry x:Name="UserIdEntry" Keyboard="Numeric" />
+
+        <Label Text="Appointment Date:" />
+        <DatePicker x:Name="AppointmentDatePicker" />
+
+        <Button Text="Save" Clicked="OnSaveClicked" />
+        <Button Text="Delete" Clicked="OnDeleteClicked" IsVisible="False" x:Name="DeleteButton" />
+
+    </StackLayout>
+</ContentPage>

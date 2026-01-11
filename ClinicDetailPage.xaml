@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudalaceanCiprianLab7.ClinicDetailPage"
+             Title="Clinic Details">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Clinic Details"
+                   FontSize="22"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Clinic Name:" />
+            <Label x:Name="NameLabel" FontAttributes="Bold" />
+
+            <Label Text="Address:" />
+            <Label x:Name="AddressLabel" />
+
+            <Label Text="Phone:" />
+            <Label x:Name="PhoneLabel" />
+
+            <Button Text="Back"
+                    Clicked="OnBackClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

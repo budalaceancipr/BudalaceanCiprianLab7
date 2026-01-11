@@ -60,29 +60,62 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
-		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="10.0.11" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.100" />
 		<PackageReference Include="Plugin.LocalNotification" Version="8.0.1" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
 		<PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AboutPage.xaml">
+	  <Compile Update="AppointmentEntryPage.xaml.cs">
+	    <DependentUpon>AppointmentEntryPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AppointmentPage.xaml.cs">
+	    <DependentUpon>AppointmentPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ServiceDetailPage.xaml.cs">
+	    <DependentUpon>ServiceDetailPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ServicePage.xaml.cs">
+	    <DependentUpon>ServicePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ClinicEntryPage.xaml.cs">
+	    <DependentUpon>ClinicEntryPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ClinicPage.xaml.cs">
+	    <DependentUpon>ClinicPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="AppointmentDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ListEntryPage.xaml">
+	  <MauiXaml Update="AppointmentEntryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ListPage.xaml">
+	  <MauiXaml Update="AppointmentPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ProductPage.xaml">
+	  <MauiXaml Update="ClinicDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ShopEntryPage.xaml">
+	  <MauiXaml Update="ServiceDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ShopPage.xaml">
+	  <MauiXaml Update="ServiceEntryPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ServicePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ClinicEntryPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ClinicPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
